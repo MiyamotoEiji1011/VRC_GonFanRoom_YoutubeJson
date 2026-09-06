@@ -18,17 +18,41 @@ from PIL import Image
 
 API_KEY = os.environ["YOUTUBE_API_KEY"]
 
-# 取得したいYouTubeチャンネル
-CHANNEL_HANDLE = "@gon_vl"
 
-# 最大取得動画数
+# =========================================================
+# YOUTUBE CHANNELS
+#
+# key:
+#   VRChat側で使用する固定ID
+#
+# handle:
+#   YouTubeの @ハンドル
+# =========================================================
+
+CHANNELS = [
+    {
+        "key": "gon",
+        "handle": "@gon_vl",
+    },
+    {
+        "key": "yoh",
+        "handle": "@yohtubedayo",
+    },
+    {
+        "key": "yohgon",
+        "handle": "@yoh_gon",
+    },
+]
+
+
+# 1チャンネルあたり最大50動画
 MAX_VIDEOS = 50
 
-# サムネイル1枚あたり
+# 1サムネイル
 THUMB_WIDTH = 320
 THUMB_HEIGHT = 180
 
-# VRChat UI
+# 1ページ6件
 PAGE_SIZE = 6
 COLUMNS = 3
 ROWS = 2
@@ -42,14 +66,14 @@ ROOT = Path(__file__).resolve().parent.parent
 
 DOCS = ROOT / "docs"
 
-THUMB_PAGES = (
+THUMB_ROOT = (
     DOCS
     / "thumb_pages"
 )
 
 
 # =========================================================
-# HTTP JSON
+# HTTP
 # =========================================================
 
 def get_json(base_url, params):
@@ -64,7 +88,7 @@ def get_json(base_url, params):
         url,
         headers={
             "User-Agent":
-                "GON-VRChat-YouTube-Updater/1.0"
+                "GON-VRChat-YouTube-Updater/2.0"
         }
     )
 
@@ -73,24 +97,21 @@ def get_json(base_url, params):
         timeout=30
     ) as response:
 
-        text = (
+        return json.loads(
             response
             .read()
             .decode("utf-8")
         )
 
-        return json.loads(text)
-
 
 # =========================================================
-# GET CHANNEL / UPLOADS PLAYLIST
+# CHANNEL
 # =========================================================
 
-def get_uploads_playlist():
+def get_channel_info(handle):
 
-    # @ を除いたハンドルをAPIへ渡す
     api_handle = (
-        CHANNEL_HANDLE
+        handle
         .lstrip("@")
     )
 
@@ -108,11 +129,12 @@ def get_uploads_playlist():
         },
     )
 
+
     if not data.get("items"):
 
         raise RuntimeError(
             "YouTube channel was not found: "
-            + CHANNEL_HANDLE
+            + handle
         )
 
 
@@ -121,19 +143,17 @@ def get_uploads_playlist():
     )
 
 
-    # Channel ID
     channel_id = (
         channel["id"]
     )
 
 
-    # Channel Name
     channel_title = (
-        channel["snippet"]["title"]
+        channel["snippet"]
+        ["title"]
     )
 
 
-    # Uploads Playlist ID
     uploads_id = (
         channel["contentDetails"]
         ["relatedPlaylists"]
@@ -149,7 +169,7 @@ def get_uploads_playlist():
 
 
 # =========================================================
-# GET LATEST VIDEOS
+# VIDEOS
 # =========================================================
 
 def get_latest_videos(
@@ -193,21 +213,16 @@ def get_latest_videos(
         )
 
 
-        # ---------------------------------------------
-        # VIDEO ID
-        # ---------------------------------------------
-
         video_id = (
-            details.get("videoId")
+            details.get(
+                "videoId"
+            )
         )
+
 
         if not video_id:
             continue
 
-
-        # ---------------------------------------------
-        # TITLE
-        # ---------------------------------------------
 
         title = html.unescape(
             snippet.get(
@@ -217,7 +232,6 @@ def get_latest_videos(
         )
 
 
-        # 削除済み・非公開動画を除外
         if title in (
             "Private video",
             "Deleted video"
@@ -225,17 +239,13 @@ def get_latest_videos(
             continue
 
 
-        # ---------------------------------------------
-        # PUBLISHED DATE
-        # ---------------------------------------------
-
-        # videoPublishedAtを優先
         published_at = (
             details.get(
                 "videoPublishedAt",
                 ""
             )
         )
+
 
         if not published_at:
 
@@ -246,10 +256,6 @@ def get_latest_videos(
                 )
             )
 
-
-        # ---------------------------------------------
-        # THUMBNAIL
-        # ---------------------------------------------
 
         thumbnails = (
             snippet.get(
@@ -262,7 +268,6 @@ def get_latest_videos(
         thumbnail_url = None
 
 
-        # 一番高い解像度を使用
         for quality in (
             "maxres",
             "standard",
@@ -282,9 +287,15 @@ def get_latest_videos(
                 break
 
 
-        # ---------------------------------------------
-        # SAVE
-        # ---------------------------------------------
+        # API側にサムネイルURLが無い場合の保険
+        if not thumbnail_url:
+
+            thumbnail_url = (
+                "https://i.ytimg.com/vi/"
+                + video_id
+                + "/hqdefault.jpg"
+            )
+
 
         videos.append(
             {
@@ -323,29 +334,10 @@ def get_latest_videos(
 
 
 # =========================================================
-# DOWNLOAD THUMBNAIL
+# THUMBNAIL DOWNLOAD
 # =========================================================
 
-def download_thumbnail(
-    url
-):
-
-    # URL無し
-    if not url:
-
-        return Image.new(
-            "RGB",
-            (
-                THUMB_WIDTH,
-                THUMB_HEIGHT
-            ),
-            (
-                20,
-                20,
-                20
-            ),
-        )
-
+def download_thumbnail(url):
 
     try:
 
@@ -353,7 +345,7 @@ def download_thumbnail(
             url,
             headers={
                 "User-Agent":
-                    "GON-VRChat-YouTube-Updater/1.0"
+                    "GON-VRChat-YouTube-Updater/2.0"
             }
         )
 
@@ -416,17 +408,33 @@ def download_thumbnail(
 
 
 # =========================================================
-# CREATE 3x2 THUMBNAIL SHEETS
+# THUMBNAIL PAGES
 # =========================================================
 
 def create_thumbnail_pages(
+    channel_key,
     videos
 ):
 
-    THUMB_PAGES.mkdir(
+    channel_dir = (
+        THUMB_ROOT
+        / channel_key
+    )
+
+
+    channel_dir.mkdir(
         parents=True,
         exist_ok=True
     )
+
+
+    # 古いページを削除
+    for old_file in (
+        channel_dir
+        .glob("*.jpg")
+    ):
+
+        old_file.unlink()
 
 
     page_count = math.ceil(
@@ -435,23 +443,9 @@ def create_thumbnail_pages(
     )
 
 
-    # 古い画像を削除
-    for old_file in (
-        THUMB_PAGES
-        .glob("*.jpg")
-    ):
-
-        old_file.unlink()
-
-
-    # ---------------------------------------------
-    # PAGE
-    # ---------------------------------------------
-
     for page in range(
         page_count
     ):
-
 
         sheet = Image.new(
             "RGB",
@@ -469,10 +463,6 @@ def create_thumbnail_pages(
             ),
         )
 
-
-        # -----------------------------------------
-        # 6 VIDEOS
-        # -----------------------------------------
 
         for slot in range(
             PAGE_SIZE
@@ -530,12 +520,8 @@ def create_thumbnail_pages(
             )
 
 
-        # -----------------------------------------
-        # SAVE
-        # -----------------------------------------
-
         filename = (
-            THUMB_PAGES
+            channel_dir
             / f"{page:02d}.jpg"
         )
 
@@ -549,7 +535,9 @@ def create_thumbnail_pages(
 
 
         print(
-            "Created thumbnail page:",
+            "Created thumbnail:",
+            channel_key,
+            page,
             filename
         )
 
@@ -558,30 +546,21 @@ def create_thumbnail_pages(
 
 
 # =========================================================
-# CREATE VIDEOS.JSON
+# JSON VIDEO DATA
 # =========================================================
 
-def write_json(
-    channel_id,
-    channel_title,
-    videos,
-    page_count
+def create_output_videos(
+    videos
 ):
 
-    DOCS.mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
-
-    output_videos = []
+    result = []
 
 
     for index, video in enumerate(
         videos
     ):
 
-        output_videos.append(
+        result.append(
             {
                 "index":
                     index,
@@ -609,6 +588,166 @@ def write_json(
         )
 
 
+    return result
+
+
+# =========================================================
+# MAIN
+# =========================================================
+
+def main():
+
+    print(
+        "======================================"
+    )
+
+    print(
+        "YouTube Multi Channel Feed Update"
+    )
+
+    print(
+        "======================================"
+    )
+
+
+    DOCS.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+
+    THUMB_ROOT.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+
+    output_channels = []
+
+
+    # =====================================================
+    # CHANNEL LOOP
+    # =====================================================
+
+    for config in CHANNELS:
+
+        channel_key = (
+            config["key"]
+        )
+
+        channel_handle = (
+            config["handle"]
+        )
+
+
+        print()
+        print(
+            "--------------------------------------"
+        )
+
+        print(
+            "Loading:",
+            channel_key,
+            channel_handle
+        )
+
+
+        (
+            channel_id,
+            channel_title,
+            uploads_id
+        ) = get_channel_info(
+            channel_handle
+        )
+
+
+        print(
+            "Channel ID:",
+            channel_id
+        )
+
+
+        print(
+            "Channel Name:",
+            channel_title
+        )
+
+
+        print(
+            "Uploads Playlist:",
+            uploads_id
+        )
+
+
+        # ---------------------------------------------
+        # VIDEOS
+        # ---------------------------------------------
+
+        videos = get_latest_videos(
+            uploads_id
+        )
+
+
+        print(
+            "Videos:",
+            len(videos)
+        )
+
+
+        # ---------------------------------------------
+        # THUMBNAILS
+        # ---------------------------------------------
+
+        page_count = (
+            create_thumbnail_pages(
+                channel_key,
+                videos
+            )
+        )
+
+
+        # ---------------------------------------------
+        # JSON CHANNEL OBJECT
+        # ---------------------------------------------
+
+        output_channels.append(
+            {
+                "key":
+                    channel_key,
+
+                "channelId":
+                    channel_id,
+
+                "channelHandle":
+                    channel_handle,
+
+                "channelTitle":
+                    channel_title,
+
+                "count":
+                    len(videos),
+
+                "pageSize":
+                    PAGE_SIZE,
+
+                "pageCount":
+                    page_count,
+
+                "thumbnailPath":
+                    (
+                        "thumb_pages/"
+                        + channel_key
+                        + "/"
+                    ),
+
+                "videos":
+                    create_output_videos(
+                        videos
+                    ),
+            }
+        )
+
+
     # =====================================================
     # FINAL JSON
     # =====================================================
@@ -616,7 +755,7 @@ def write_json(
     result = {
 
         "version":
-            1,
+            2,
 
         "updatedAt":
             (
@@ -625,28 +764,19 @@ def write_json(
                 .isoformat()
             ),
 
-        "channelId":
-            channel_id,
-
-        "channelHandle":
-            CHANNEL_HANDLE,
-
-        "channelTitle":
-            channel_title,
-
-        "count":
-            len(
-                output_videos
-            ),
-
         "pageSize":
             PAGE_SIZE,
 
-        "pageCount":
-            page_count,
+        "maxVideosPerChannel":
+            MAX_VIDEOS,
 
-        "videos":
-            output_videos,
+        "channelCount":
+            len(
+                output_channels
+            ),
+
+        "channels":
+            output_channels,
     }
 
 
@@ -669,114 +799,19 @@ def write_json(
         )
 
 
+    print()
     print(
-        "Created JSON:",
+        "======================================"
+    )
+
+    print(
+        "Created:",
         output_file
     )
 
-
-# =========================================================
-# MAIN
-# =========================================================
-
-def main():
-
     print(
-        "================================"
-    )
-
-    print(
-        "YouTube Feed Update"
-    )
-
-    print(
-        "Target:",
-        CHANNEL_HANDLE
-    )
-
-    print(
-        "================================"
-    )
-
-
-    # ---------------------------------------------
-    # CHANNEL
-    # ---------------------------------------------
-
-    (
-        channel_id,
-        channel_title,
-        uploads_id
-    ) = get_uploads_playlist()
-
-
-    print(
-        "Channel ID:",
-        channel_id
-    )
-
-    print(
-        "Channel Handle:",
-        CHANNEL_HANDLE
-    )
-
-    print(
-        "Channel Name:",
-        channel_title
-    )
-
-    print(
-        "Uploads Playlist:",
-        uploads_id
-    )
-
-
-    # ---------------------------------------------
-    # VIDEOS
-    # ---------------------------------------------
-
-    videos = get_latest_videos(
-        uploads_id
-    )
-
-
-    print(
-        "Videos:",
-        len(videos)
-    )
-
-
-    # ---------------------------------------------
-    # THUMBNAILS
-    # ---------------------------------------------
-
-    page_count = (
-        create_thumbnail_pages(
-            videos
-        )
-    )
-
-
-    print(
-        "Pages:",
-        page_count
-    )
-
-
-    # ---------------------------------------------
-    # JSON
-    # ---------------------------------------------
-
-    write_json(
-        channel_id,
-        channel_title,
-        videos,
-        page_count,
-    )
-
-
-    print(
-        "================================"
+        "Channels:",
+        len(output_channels)
     )
 
     print(
@@ -784,7 +819,7 @@ def main():
     )
 
     print(
-        "================================"
+        "======================================"
     )
 
 
