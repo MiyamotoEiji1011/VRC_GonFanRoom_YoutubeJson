@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-07T07:36:53.862946Z",
+  "updatedAt": "2026-09-07T07:43:24.692857Z",
   "youtube": {
     "count": 619000,
     "display": "619,000",
     "source": "Social Blade",
     "sourceUrl": "https://socialblade.com/youtube/handle/gon_vl/realtime",
-    "lastSuccessAt": "2026-09-07T07:36:53.862963Z",
+    "lastSuccessAt": "2026-09-07T07:43:24.692872Z",
     "status": "ok"
   },
   "x": {
@@ -16,14 +16,14 @@
     "sourceUrl": "",
     "lastSuccessAt": null,
     "status": "stale",
-    "lastError": "HTTPError: 403 Client Error: Forbidden for url: https://r.jina.ai/https://site.twstalker.com/gonsan_vl"
+    "lastError": "HTTPError: 403 Client Error: Forbidden for url: https://w.twstalker.com/gonsan_vl"
   },
   "twitch": {
     "count": 523057,
     "display": "523,057",
     "source": "Streams Charts",
     "sourceUrl": "https://streamscharts.com/channels/gon_vl",
-    "lastSuccessAt": "2026-09-07T07:36:54.386366Z",
+    "lastSuccessAt": "2026-09-07T07:43:25.668542Z",
     "status": "ok"
   }
 }
