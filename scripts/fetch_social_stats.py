@@ -122,62 +122,164 @@ def fetch_x():
     """
     X follower count.
 
-    TwStalker は GitHub Actions のIPを403で弾くことがあるため、
-    Jina Reader を経由して Instalker の公開プロフィールを取得する。
-    Jina Reader は対象URLをMarkdown/Textへ変換して返すので、
-    GitHub Actions側は通常のHTTP GETだけでよい。
+    優先順位:
+      1) X/Twitter公式の埋め込み用 Syndication timeline
+      2) X/Twitter公式の follow button JSON
+      3) 第三者サイト（最終フォールバック）
 
-    1時間に1回の実行なので、匿名Readerの基本利用で十分な想定。
+    API Key / Bearer Token は不要。
     """
-    sources = [
-        (
-            "Jina Reader / Instalker",
-            "https://r.jina.ai/https://instalker.org/gonsan_vl",
-            "https://instalker.org/gonsan_vl",
-        ),
-        (
-            "Instalker Direct",
-            "https://instalker.org/gonsan_vl",
-            "https://instalker.org/gonsan_vl",
-        ),
-        (
-            "Jina Reader / TwStalker",
-            "https://r.jina.ai/https://site.twstalker.com/gonsan_vl",
-            "https://site.twstalker.com/gonsan_vl",
-        ),
+
+    # ---------------------------------------------------------
+    # 1) Official X/Twitter Syndication timeline
+    # ---------------------------------------------------------
+
+    timeline_url = (
+        "https://syndication.twitter.com/"
+        "srv/timeline-profile/screen-name/gonsan_vl"
+    )
+
+    try:
+        response = requests.get(
+            timeline_url,
+            headers=HEADERS,
+            timeout=TIMEOUT,
+        )
+        response.raise_for_status()
+
+        html = response.text
+
+        match = re.search(
+            r'<script[^>]+id=["\']__NEXT_DATA__["\'][^>]*>(.*?)</script>',
+            html,
+            re.DOTALL | re.IGNORECASE,
+        )
+
+        if not match:
+            raise ValueError("__NEXT_DATA__ was not found")
+
+        next_data = json.loads(match.group(1))
+
+        entries = (
+            next_data
+            .get("props", {})
+            .get("pageProps", {})
+            .get("timeline", {})
+            .get("entries", [])
+        )
+
+        for entry in entries:
+            try:
+                user = (
+                    entry["content"]
+                    ["tweet"]
+                    ["user"]
+                )
+
+                screen_name = str(
+                    user.get("screen_name", "")
+                ).lower()
+
+                followers = user.get("followers_count")
+
+                if (
+                    screen_name == "gonsan_vl"
+                    and isinstance(followers, int)
+                ):
+                    print(
+                        "[OK] x via official syndication timeline: "
+                        f"{followers:,}"
+                    )
+
+                    return followers, timeline_url
+
+            except Exception:
+                continue
+
+        raise ValueError(
+            "followers_count was not found in syndication timeline"
+        )
+
+    except Exception as e:
+        print(
+            "[WARN] X official timeline failed: "
+            f"{type(e).__name__}: {e}"
+        )
+
+
+    # ---------------------------------------------------------
+    # 2) Official follow-button JSON
+    # ---------------------------------------------------------
+
+    follow_url = (
+        "https://cdn.syndication.twimg.com/"
+        "widgets/followbutton/info.json"
+        "?screen_names=gonsan_vl"
+    )
+
+    try:
+        response = requests.get(
+            follow_url,
+            headers=HEADERS,
+            timeout=TIMEOUT,
+        )
+        response.raise_for_status()
+
+        data = response.json()
+
+        if (
+            isinstance(data, list)
+            and len(data) > 0
+            and isinstance(data[0], dict)
+        ):
+            followers = data[0].get("followers_count")
+
+            if isinstance(followers, int):
+                print(
+                    "[OK] x via official follow-button JSON: "
+                    f"{followers:,}"
+                )
+
+                return followers, follow_url
+
+        raise ValueError(
+            "followers_count was not found in follow-button JSON"
+        )
+
+    except Exception as e:
+        print(
+            "[WARN] X official follow-button failed: "
+            f"{type(e).__name__}: {e}"
+        )
+
+
+    # ---------------------------------------------------------
+    # 3) Third-party fallback
+    # ---------------------------------------------------------
+
+    fallback_urls = [
+        "https://instalker.org/gonsan_vl",
+        "https://site.twstalker.com/gonsan_vl",
+        "https://twstalker.com/gonsan_vl",
+        "https://w.twstalker.com/gonsan_vl",
     ]
 
     last_error = None
 
-    # HTMLでもJina ReaderのMarkdownでも拾えるように、改行を含めて緩めに検索する
     patterns = [
         r"\bFollowers\s*[:\-]?\s*([0-9][0-9., ]*\s*[KMB]?)\b",
         r"\b([0-9][0-9., ]*\s*[KMB]?)\s+Followers\b",
     ]
 
-    for source_name, request_url, public_source_url in sources:
+    for url in fallback_urls:
         try:
-            response = requests.get(
-                request_url,
-                headers=HEADERS,
-                timeout=TIMEOUT,
+            raw = fetch_text(url)
+
+            normalized = re.sub(
+                r"\s+",
+                " ",
+                raw,
             )
-            response.raise_for_status()
-
-            raw = response.text
-
-            # Jina ReaderはMarkdown/Text、
-            # 直接取得はHTMLなので、HTMLの場合だけ可視テキスト化する。
-            if "<html" in raw.lower() or "<body" in raw.lower():
-                soup = BeautifulSoup(raw, "html.parser")
-
-                for tag in soup(["script", "style", "noscript"]):
-                    tag.decompose()
-
-                raw = " ".join(soup.stripped_strings)
-
-            # 改行を空白にまとめる
-            normalized = re.sub(r"\s+", " ", raw)
 
             for pattern in patterns:
                 match = re.search(
@@ -192,22 +294,22 @@ def fetch_x():
                     )
 
                     print(
-                        f"[OK] x via {source_name}: "
+                        "[OK] x via fallback: "
                         f"{count:,}"
                     )
 
-                    return count, public_source_url
+                    return count, url
 
             last_error = ValueError(
-                f"X follower count was not found via {source_name}"
+                f"X follower count was not found: {url}"
             )
 
         except Exception as e:
             last_error = e
 
             print(
-                f"[WARN] X source failed "
-                f"({source_name}): "
+                "[WARN] X fallback failed "
+                f"({url}): "
                 f"{type(e).__name__}: {e}"
             )
 
@@ -277,7 +379,7 @@ def main():
         "x": update_platform(
             previous,
             "x",
-            "Instalker via Jina Reader",
+            "X Syndication",
             fetch_x,
         ),
         "twitch": update_platform(
