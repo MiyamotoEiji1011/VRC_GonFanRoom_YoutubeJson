@@ -1,0 +1,15 @@
+{
+  // Worker name displayed in Cloudflare Dashboard
+  "name": "gon-youtube-redirect",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-09-23",
+
+  "vars": {
+    "CATALOG_URL": "https://miyamotoeiji1011.github.io/VRC_GonFanRoom_YoutubeJson/videos.json"
+  },
+
+  // Observability (optional, enables Workers Logpush)
+  "observability": {
+    "enabled": true
+  }
+}
