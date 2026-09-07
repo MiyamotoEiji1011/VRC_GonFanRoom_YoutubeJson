@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-07T07:43:24.692857Z",
+  "updatedAt": "2026-09-07T08:07:11.894012Z",
   "youtube": {
     "count": 619000,
     "display": "619,000",
     "source": "Social Blade",
     "sourceUrl": "https://socialblade.com/youtube/handle/gon_vl/realtime",
-    "lastSuccessAt": "2026-09-07T07:43:24.692872Z",
+    "lastSuccessAt": "2026-09-07T08:07:11.894028Z",
     "status": "ok"
   },
   "x": {
@@ -16,14 +16,14 @@
     "sourceUrl": "",
     "lastSuccessAt": null,
     "status": "stale",
-    "lastError": "HTTPError: 403 Client Error: Forbidden for url: https://w.twstalker.com/gonsan_vl"
+    "lastError": "ValueError: Follower count not found in Bing RSS for query: \"gonsan_vl\" \"Followers\""
   },
   "twitch": {
     "count": 523057,
     "display": "523,057",
     "source": "Streams Charts",
     "sourceUrl": "https://streamscharts.com/channels/gon_vl",
-    "lastSuccessAt": "2026-09-07T07:43:25.668542Z",
+    "lastSuccessAt": "2026-09-07T08:07:12.535835Z",
     "status": "ok"
   }
 }
