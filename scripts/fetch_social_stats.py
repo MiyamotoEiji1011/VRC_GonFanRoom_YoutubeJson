@@ -119,32 +119,97 @@ def fetch_youtube():
 
 
 def fetch_x():
-    urls = [
-        "https://site.twstalker.com/gonsan_vl",
-        "https://twstalker.com/gonsan_vl",
-        "https://w.twstalker.com/gonsan_vl",
+    """
+    X follower count.
+
+    TwStalker は GitHub Actions のIPを403で弾くことがあるため、
+    Jina Reader を経由して Instalker の公開プロフィールを取得する。
+    Jina Reader は対象URLをMarkdown/Textへ変換して返すので、
+    GitHub Actions側は通常のHTTP GETだけでよい。
+
+    1時間に1回の実行なので、匿名Readerの基本利用で十分な想定。
+    """
+    sources = [
+        (
+            "Jina Reader / Instalker",
+            "https://r.jina.ai/https://instalker.org/gonsan_vl",
+            "https://instalker.org/gonsan_vl",
+        ),
+        (
+            "Instalker Direct",
+            "https://instalker.org/gonsan_vl",
+            "https://instalker.org/gonsan_vl",
+        ),
+        (
+            "Jina Reader / TwStalker",
+            "https://r.jina.ai/https://site.twstalker.com/gonsan_vl",
+            "https://site.twstalker.com/gonsan_vl",
+        ),
     ]
 
     last_error = None
 
-    for url in urls:
-        try:
-            text = fetch_text(url)
+    # HTMLでもJina ReaderのMarkdownでも拾えるように、改行を含めて緩めに検索する
+    patterns = [
+        r"\bFollowers\s*[:\-]?\s*([0-9][0-9., ]*\s*[KMB]?)\b",
+        r"\b([0-9][0-9., ]*\s*[KMB]?)\s+Followers\b",
+    ]
 
-            patterns = [
-                r"\bFollowers\s+([0-9][0-9., ]*\s*[KMB]?)\b",
-                r"\b([0-9][0-9., ]*\s*[KMB]?)\s+Followers\b",
-            ]
+    for source_name, request_url, public_source_url in sources:
+        try:
+            response = requests.get(
+                request_url,
+                headers=HEADERS,
+                timeout=TIMEOUT,
+            )
+            response.raise_for_status()
+
+            raw = response.text
+
+            # Jina ReaderはMarkdown/Text、
+            # 直接取得はHTMLなので、HTMLの場合だけ可視テキスト化する。
+            if "<html" in raw.lower() or "<body" in raw.lower():
+                soup = BeautifulSoup(raw, "html.parser")
+
+                for tag in soup(["script", "style", "noscript"]):
+                    tag.decompose()
+
+                raw = " ".join(soup.stripped_strings)
+
+            # 改行を空白にまとめる
+            normalized = re.sub(r"\s+", " ", raw)
 
             for pattern in patterns:
-                match = re.search(pattern, text, re.IGNORECASE)
-                if match:
-                    count = parse_human_count(match.group(1))
-                    return count, url
+                match = re.search(
+                    pattern,
+                    normalized,
+                    re.IGNORECASE,
+                )
 
-            last_error = ValueError("X follower count was not found")
+                if match:
+                    count = parse_human_count(
+                        match.group(1)
+                    )
+
+                    print(
+                        f"[OK] x via {source_name}: "
+                        f"{count:,}"
+                    )
+
+                    return count, public_source_url
+
+            last_error = ValueError(
+                f"X follower count was not found via {source_name}"
+            )
+
         except Exception as e:
             last_error = e
+
+            print(
+                f"[WARN] X source failed "
+                f"({source_name}): "
+                f"{type(e).__name__}: {e}"
+            )
 
     raise last_error or RuntimeError("X fetch failed")
 
@@ -212,7 +277,7 @@ def main():
         "x": update_platform(
             previous,
             "x",
-            "TwStalker",
+            "Instalker via Jina Reader",
             fetch_x,
         ),
         "twitch": update_platform(
