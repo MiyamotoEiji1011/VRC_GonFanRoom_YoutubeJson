@@ -1,5 +1,6 @@
 import json
 import re
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -35,7 +36,6 @@ def fetch_text(url):
 
     soup = BeautifulSoup(response.text, "html.parser")
 
-    # script/styleを除外し、HTML上で見えているテキストを検索しやすくする
     for tag in soup(["script", "style", "noscript"]):
         tag.decompose()
 
@@ -47,7 +47,6 @@ def parse_human_count(raw):
     619K -> 619000
     1.2M -> 1200000
     523,057 -> 523057
-    523 057 -> 523057
     """
     value = raw.strip().upper()
     value = value.replace(",", "").replace(" ", "")
@@ -120,207 +119,115 @@ def fetch_youtube():
 
 def fetch_x():
     """
-    X follower count.
+    X follower count via Bing Search RSS.
 
-    優先順位:
-      1) X/Twitter公式の埋め込み用 Syndication timeline
-      2) X/Twitter公式の follow button JSON
-      3) 第三者サイト（最終フォールバック）
-
-    API Key / Bearer Token は不要。
+    API key / Secret不要。
+    GitHub ActionsからX/TwStalkerへ直接アクセスせず、
+    Bingの検索インデックスに載っているスニペットから取得する。
     """
 
-    # ---------------------------------------------------------
-    # 1) Official X/Twitter Syndication timeline
-    # ---------------------------------------------------------
+    queries = [
+        'site:site.twstalker.com/gonsan_vl "GON" Followers',
+        'site:twstalker.com/gonsan_vl "gonsan_vl" Followers',
+        '"gonsan_vl" "Followers"',
+    ]
 
-    timeline_url = (
-        "https://syndication.twitter.com/"
-        "srv/timeline-profile/screen-name/gonsan_vl"
-    )
-
-    try:
-        response = requests.get(
-            timeline_url,
-            headers=HEADERS,
-            timeout=TIMEOUT,
-        )
-        response.raise_for_status()
-
-        html = response.text
-
-        match = re.search(
-            r'<script[^>]+id=["\']__NEXT_DATA__["\'][^>]*>(.*?)</script>',
-            html,
-            re.DOTALL | re.IGNORECASE,
-        )
-
-        if not match:
-            raise ValueError("__NEXT_DATA__ was not found")
-
-        next_data = json.loads(match.group(1))
-
-        entries = (
-            next_data
-            .get("props", {})
-            .get("pageProps", {})
-            .get("timeline", {})
-            .get("entries", [])
-        )
-
-        for entry in entries:
-            try:
-                user = (
-                    entry["content"]
-                    ["tweet"]
-                    ["user"]
-                )
-
-                screen_name = str(
-                    user.get("screen_name", "")
-                ).lower()
-
-                followers = user.get("followers_count")
-
-                if (
-                    screen_name == "gonsan_vl"
-                    and isinstance(followers, int)
-                ):
-                    print(
-                        "[OK] x via official syndication timeline: "
-                        f"{followers:,}"
-                    )
-
-                    return followers, timeline_url
-
-            except Exception:
-                continue
-
-        raise ValueError(
-            "followers_count was not found in syndication timeline"
-        )
-
-    except Exception as e:
-        print(
-            "[WARN] X official timeline failed: "
-            f"{type(e).__name__}: {e}"
-        )
-
-
-    # ---------------------------------------------------------
-    # 2) Official follow-button JSON
-    # ---------------------------------------------------------
-
-    follow_url = (
-        "https://cdn.syndication.twimg.com/"
-        "widgets/followbutton/info.json"
-        "?screen_names=gonsan_vl"
-    )
-
-    try:
-        response = requests.get(
-            follow_url,
-            headers=HEADERS,
-            timeout=TIMEOUT,
-        )
-        response.raise_for_status()
-
-        data = response.json()
-
-        if (
-            isinstance(data, list)
-            and len(data) > 0
-            and isinstance(data[0], dict)
-        ):
-            followers = data[0].get("followers_count")
-
-            if isinstance(followers, int):
-                print(
-                    "[OK] x via official follow-button JSON: "
-                    f"{followers:,}"
-                )
-
-                return followers, follow_url
-
-        raise ValueError(
-            "followers_count was not found in follow-button JSON"
-        )
-
-    except Exception as e:
-        print(
-            "[WARN] X official follow-button failed: "
-            f"{type(e).__name__}: {e}"
-        )
-
-
-    # ---------------------------------------------------------
-    # 3) Third-party fallback
-    # ---------------------------------------------------------
-
-    fallback_urls = [
-        "https://instalker.org/gonsan_vl",
-        "https://site.twstalker.com/gonsan_vl",
-        "https://twstalker.com/gonsan_vl",
-        "https://w.twstalker.com/gonsan_vl",
+    patterns = [
+        r"\bFollowers\s*[:\-]?\s*([0-9]+(?:\.[0-9]+)?\s*[KMB]?)\b",
+        r"\b([0-9]+(?:\.[0-9]+)?\s*[KMB]?)\s+Followers\b",
     ]
 
     last_error = None
 
-    patterns = [
-        r"\bFollowers\s*[:\-]?\s*([0-9][0-9., ]*\s*[KMB]?)\b",
-        r"\b([0-9][0-9., ]*\s*[KMB]?)\s+Followers\b",
-    ]
-
-    for url in fallback_urls:
+    for query in queries:
         try:
-            raw = fetch_text(url)
-
-            normalized = re.sub(
-                r"\s+",
-                " ",
-                raw,
+            response = requests.get(
+                "https://www.bing.com/search",
+                params={
+                    "q": query,
+                    "format": "rss",
+                    "setlang": "en-US",
+                },
+                headers=HEADERS,
+                timeout=TIMEOUT,
             )
+            response.raise_for_status()
 
-            for pattern in patterns:
-                match = re.search(
-                    pattern,
-                    normalized,
-                    re.IGNORECASE,
-                )
+            root = ET.fromstring(response.text)
+            items = root.findall(".//item")
 
-                if match:
-                    count = parse_human_count(
-                        match.group(1)
-                    )
+            if not items:
+                raise ValueError("Bing RSS returned no items")
+
+            for item in items:
+                title = item.findtext("title") or ""
+                description = item.findtext("description") or ""
+                link = item.findtext("link") or ""
+
+                snippet_html = f"{title} {description}"
+                soup = BeautifulSoup(snippet_html, "html.parser")
+                snippet = " ".join(soup.stripped_strings)
+
+                combined = f"{snippet} {link}"
+                combined_lower = combined.lower()
+
+                if (
+                    "gonsan_vl" not in combined_lower
+                    and "gon @" not in combined_lower
+                ):
+                    continue
+
+                candidates = []
+
+                for pattern in patterns:
+                    for match in re.finditer(
+                        pattern,
+                        snippet,
+                        re.IGNORECASE,
+                    ):
+                        try:
+                            value = parse_human_count(match.group(1))
+
+                            if 100_000 <= value <= 2_000_000:
+                                candidates.append(value)
+                        except Exception:
+                            continue
+
+                if candidates:
+                    count = max(candidates)
 
                     print(
-                        "[OK] x via fallback: "
+                        "[OK] x via Bing RSS: "
                         f"{count:,}"
                     )
 
-                    return count, url
+                    return (
+                        count,
+                        link if link else "https://x.com/gonsan_vl",
+                    )
 
             last_error = ValueError(
-                f"X follower count was not found: {url}"
+                f"Follower count not found in Bing RSS for query: {query}"
             )
 
         except Exception as e:
             last_error = e
 
             print(
-                "[WARN] X fallback failed "
-                f"({url}): "
+                "[WARN] X Bing RSS failed "
+                f"({query}): "
                 f"{type(e).__name__}: {e}"
             )
 
-    raise last_error or RuntimeError("X fetch failed")
+    raise last_error or RuntimeError(
+        "X follower count could not be found via Bing RSS"
+    )
 
 
 def fetch_twitch():
     url = "https://streamscharts.com/channels/gon_vl"
     text = fetch_text(url)
 
-    # FAQには1人単位のFollower数が載ることがあるので、まずこちらを優先
     patterns = [
         r"followers count is\s+([0-9][0-9,\s]*)\s+followers",
         r"\bFollowers\s+([0-9][0-9., ]*\s*[KMB]?)\b",
@@ -356,7 +263,6 @@ def update_platform(previous, key, source_name, fetcher):
 
         print(f"[WARN] {key}: {type(e).__name__}: {e}")
 
-        # 一時的にスクレイピング失敗しても、前回値を消さない
         old = dict(old)
         old["status"] = "stale"
         old["lastError"] = f"{type(e).__name__}: {e}"
@@ -379,7 +285,7 @@ def main():
         "x": update_platform(
             previous,
             "x",
-            "X Syndication",
+            "Bing Search RSS",
             fetch_x,
         ),
         "twitch": update_platform(
