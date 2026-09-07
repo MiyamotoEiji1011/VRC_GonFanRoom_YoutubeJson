@@ -26,7 +26,7 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: Update social stats
-        run: python scripts/fetch_social_stats.py
+        run: python scripts/fetch_social_stats_search.py
 
       - name: Commit updated stats
         run: |
