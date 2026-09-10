@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-10T08:18:48.722058+00:00",
+  "updatedAt": "2026-09-10T13:01:40.350010+00:00",
   "pageSize": 6,
   "maxVideosPerChannel": 50,
   "channelCount": 3,
@@ -379,353 +379,353 @@
       "videos": [
         {
           "index": 0,
+          "videoId": "QtQCo3IYfRw",
+          "title": "葉の妖怪ウォッチバスターズ開始！",
+          "publishedAt": "2026-09-10T12:58:30Z",
+          "videoUrl": "https://www.youtube.com/watch?v=QtQCo3IYfRw"
+        },
+        {
+          "index": 1,
+          "videoId": "mrWT2k8ojEg",
+          "title": "葉の妖怪ウォッチ2 真打【総集編】",
+          "publishedAt": "2026-09-10T09:06:44Z",
+          "videoUrl": "https://www.youtube.com/watch?v=mrWT2k8ojEg"
+        },
+        {
+          "index": 2,
           "videoId": "kk6TwQLt9zA",
           "title": "多分いらんやろうな",
           "publishedAt": "2026-09-09T09:36:43Z",
           "videoUrl": "https://www.youtube.com/watch?v=kk6TwQLt9zA"
         },
         {
-          "index": 1,
+          "index": 3,
           "videoId": "D8Ql0OgrFCk",
           "title": "シングルタスクすぎる配信者 #葉 #don'tdropthecake",
           "publishedAt": "2026-09-06T09:00:17Z",
           "videoUrl": "https://www.youtube.com/watch?v=D8Ql0OgrFCk"
         },
         {
-          "index": 2,
+          "index": 4,
           "videoId": "lVE7OZAxMAE",
           "title": "一大事やね",
           "publishedAt": "2026-09-05T09:00:16Z",
           "videoUrl": "https://www.youtube.com/watch?v=lVE7OZAxMAE"
         },
         {
-          "index": 3,
+          "index": 5,
           "videoId": "k3brdazi0IA",
           "title": "ホラゲーで寿命を縮める配信者 #葉 #清純ドロップ",
           "publishedAt": "2026-09-03T09:00:34Z",
           "videoUrl": "https://www.youtube.com/watch?v=k3brdazi0IA"
         },
         {
-          "index": 4,
+          "index": 6,
           "videoId": "bpKPaDBHtYk",
           "title": "まだ僕はこの感情を知らない。",
           "publishedAt": "2026-09-02T09:35:07Z",
           "videoUrl": "https://www.youtube.com/watch?v=bpKPaDBHtYk"
         },
         {
-          "index": 5,
+          "index": 7,
           "videoId": "A_Jyol27H70",
           "title": "ヤバすぎる妹に運転を教える配信者#葉#ゲーム実況#妹に運転を教える",
           "publishedAt": "2026-09-01T09:12:14Z",
           "videoUrl": "https://www.youtube.com/watch?v=A_Jyol27H70"
         },
         {
-          "index": 6,
+          "index": 8,
           "videoId": "k_RKIaZTuAs",
           "title": "妹は紙ドライバー",
           "publishedAt": "2026-08-31T09:00:07Z",
           "videoUrl": "https://www.youtube.com/watch?v=k_RKIaZTuAs"
         },
         {
-          "index": 7,
+          "index": 9,
           "videoId": "W8lHFAIDAXI",
           "title": "ホラゲーに興奮してしまう配信者 #葉 #八尺様がいた夏休み",
           "publishedAt": "2026-08-30T09:00:04Z",
           "videoUrl": "https://www.youtube.com/watch?v=W8lHFAIDAXI"
         },
         {
-          "index": 8,
+          "index": 10,
           "videoId": "fP-1vHT3v2U",
           "title": "何尺あってもええ",
           "publishedAt": "2026-08-29T09:00:32Z",
           "videoUrl": "https://www.youtube.com/watch?v=fP-1vHT3v2U"
         },
         {
-          "index": 9,
+          "index": 11,
           "videoId": "wrPInf5CnkA",
           "title": "釣りもゲームも向いていない配信者 #葉 #gon #howtofish",
           "publishedAt": "2026-08-28T09:32:55Z",
           "videoUrl": "https://www.youtube.com/watch?v=wrPInf5CnkA"
         },
         {
-          "index": 10,
+          "index": 12,
           "videoId": "REK4ehdlq3A",
           "title": "友達と釣りやってみた。",
           "publishedAt": "2026-08-27T09:27:14Z",
           "videoUrl": "https://www.youtube.com/watch?v=REK4ehdlq3A"
         },
         {
-          "index": 11,
+          "index": 13,
           "videoId": "gRDPR80CC68",
           "title": "ホラゲーの演出にイライラが止まらない配信者 #葉 #奥ヶ淵商店街",
           "publishedAt": "2026-08-26T09:00:32Z",
           "videoUrl": "https://www.youtube.com/watch?v=gRDPR80CC68"
         },
         {
-          "index": 12,
+          "index": 14,
           "videoId": "tctRyVYLEhQ",
           "title": "一見さんお断り",
           "publishedAt": "2026-08-25T09:32:15Z",
           "videoUrl": "https://www.youtube.com/watch?v=tctRyVYLEhQ"
         },
         {
-          "index": 13,
+          "index": 15,
           "videoId": "xfoovNxv9sg",
           "title": "仲間を躊躇なく囮にする配信者 #葉 #animalrevoltbattlesimulator",
           "publishedAt": "2026-08-24T09:00:15Z",
           "videoUrl": "https://www.youtube.com/watch?v=xfoovNxv9sg"
         },
         {
-          "index": 14,
+          "index": 16,
           "videoId": "ql3Vx1CqhmQ",
           "title": "全軍突撃！",
           "publishedAt": "2026-08-22T10:20:58Z",
           "videoUrl": "https://www.youtube.com/watch?v=ql3Vx1CqhmQ"
         },
         {
-          "index": 15,
+          "index": 17,
           "videoId": "UIsC18KZvso",
           "title": "イカに弄ばれる配信者 #葉 #青鬼2",
           "publishedAt": "2026-08-21T10:54:29Z",
           "videoUrl": "https://www.youtube.com/watch?v=UIsC18KZvso"
         },
         {
-          "index": 16,
+          "index": 18,
           "videoId": "wtizkjYQo0s",
           "title": "青ければええ思うなよ",
           "publishedAt": "2026-08-20T09:00:29Z",
           "videoUrl": "https://www.youtube.com/watch?v=wtizkjYQo0s"
         },
         {
-          "index": 17,
+          "index": 19,
           "videoId": "L2WSCq4G0XQ",
           "title": "ホラゲーそっちのけで雪かきをしまくる配信者 #葉#雪葬",
           "publishedAt": "2026-08-19T09:00:31Z",
           "videoUrl": "https://www.youtube.com/watch?v=L2WSCq4G0XQ"
         },
         {
-          "index": 18,
+          "index": 20,
           "videoId": "dYlXvwf2_gI",
           "title": "嫌いな言葉は「冗談」",
           "publishedAt": "2026-08-18T09:34:16Z",
           "videoUrl": "https://www.youtube.com/watch?v=dYlXvwf2_gI"
         },
         {
-          "index": 19,
+          "index": 21,
           "videoId": "WDXjG24iqJM",
           "title": "ネタバレが激しすぎるゲームにツッコミが止まらない配信者 #葉 #ネタバレが激しすぎるrpg",
           "publishedAt": "2026-08-17T09:00:17Z",
           "videoUrl": "https://www.youtube.com/watch?v=WDXjG24iqJM"
         },
         {
-          "index": 20,
+          "index": 22,
           "videoId": "H1BgIpkRIeI",
           "title": "ネタバレが激しすぎるRPG vs全てにツッコむ山田",
           "publishedAt": "2026-08-16T09:00:00Z",
           "videoUrl": "https://www.youtube.com/watch?v=H1BgIpkRIeI"
         },
         {
-          "index": 21,
+          "index": 23,
           "videoId": "NzhR0LONf9k",
           "title": "力技で暗号を解読する配信者 #葉 #人の交換日記",
           "publishedAt": "2026-08-15T08:49:42Z",
           "videoUrl": "https://www.youtube.com/watch?v=NzhR0LONf9k"
         },
         {
-          "index": 22,
+          "index": 24,
           "videoId": "dB-o0RntXQw",
           "title": "この交換日記何かがおかしい…",
           "publishedAt": "2026-08-14T09:00:06Z",
           "videoUrl": "https://www.youtube.com/watch?v=dB-o0RntXQw"
         },
         {
-          "index": 23,
+          "index": 25,
           "videoId": "44pMWERAQOo",
           "title": "幽霊にスルーされる配信者 #葉#ゲーム実況 #白栄大学0号館",
           "publishedAt": "2026-08-13T09:00:37Z",
           "videoUrl": "https://www.youtube.com/watch?v=44pMWERAQOo"
         },
         {
-          "index": 24,
+          "index": 26,
           "videoId": "QtdriGsDe2E",
           "title": "どしたん？俺らが聞こか？",
           "publishedAt": "2026-08-12T09:00:14Z",
           "videoUrl": "https://www.youtube.com/watch?v=QtdriGsDe2E"
         },
         {
-          "index": 25,
+          "index": 27,
           "videoId": "j29dM1co83U",
           "title": "恋愛向いてない配信者 #葉#ゲーム実況#トモコレ",
           "publishedAt": "2026-08-11T09:00:30Z",
           "videoUrl": "https://www.youtube.com/watch?v=j29dM1co83U"
         },
         {
-          "index": 26,
+          "index": 28,
           "videoId": "3eDt2wdT2Ck",
           "title": "果たして運命の相手はいかに…",
           "publishedAt": "2026-08-10T08:24:43Z",
           "videoUrl": "https://www.youtube.com/watch?v=3eDt2wdT2Ck"
         },
         {
-          "index": 27,
+          "index": 29,
           "videoId": "MF2MVaHMO_A",
           "title": "仲間の扱いがクズすぎる配信者 #葉 #ゲーム実況 #青鬼",
           "publishedAt": "2026-08-09T09:00:19Z",
           "videoUrl": "https://www.youtube.com/watch?v=MF2MVaHMO_A"
         },
         {
-          "index": 28,
+          "index": 30,
           "videoId": "ZL-LsGcPVmY",
           "title": "量が不愉快",
           "publishedAt": "2026-08-08T09:00:36Z",
           "videoUrl": "https://www.youtube.com/watch?v=ZL-LsGcPVmY"
         },
         {
-          "index": 29,
+          "index": 31,
           "videoId": "Z-czyCZJ2WY",
           "title": "奇行が止まらない配信者 #葉#ゲーム実況#トモコレ",
           "publishedAt": "2026-08-07T09:00:10Z",
           "videoUrl": "https://www.youtube.com/watch?v=Z-czyCZJ2WY"
         },
         {
-          "index": 30,
+          "index": 32,
           "videoId": "szqN-1a3_HY",
           "title": "モテ期到来！",
           "publishedAt": "2026-08-06T09:33:56Z",
           "videoUrl": "https://www.youtube.com/watch?v=szqN-1a3_HY"
         },
         {
-          "index": 31,
+          "index": 33,
           "videoId": "PvB53NyiO4c",
           "title": "恋愛番組の主人公、問題行動を始める #葉#ゲーム実況#トモコレ",
           "publishedAt": "2026-08-05T09:00:29Z",
           "videoUrl": "https://www.youtube.com/watch?v=PvB53NyiO4c"
         },
         {
-          "index": 32,
+          "index": 34,
           "videoId": "EamP2t4Vj4Y",
           "title": "大恋愛時代の幕開け",
           "publishedAt": "2026-08-04T07:57:50Z",
           "videoUrl": "https://www.youtube.com/watch?v=EamP2t4Vj4Y"
         },
         {
-          "index": 33,
+          "index": 35,
           "videoId": "WM7xdviClHI",
           "title": "理不尽すぎるゲームにブチギレする配信者 #葉 #ゲーム実況 #しょぼんのアクション",
           "publishedAt": "2026-08-03T09:00:39Z",
           "videoUrl": "https://www.youtube.com/watch?v=WM7xdviClHI"
         },
         {
-          "index": 34,
+          "index": 36,
           "videoId": "JaXi1Zfdm90",
           "title": "こっちは100万人やぞ",
           "publishedAt": "2026-08-02T08:49:56Z",
           "videoUrl": "https://www.youtube.com/watch?v=JaXi1Zfdm90"
         },
         {
-          "index": 35,
+          "index": 37,
           "videoId": "t-oz8wq1rzg",
           "title": "100万人耐久配信！しょぼんいくぞ！",
           "publishedAt": "2026-08-01T14:59:53Z",
           "videoUrl": "https://www.youtube.com/watch?v=t-oz8wq1rzg"
         },
         {
-          "index": 36,
+          "index": 38,
           "videoId": "Zvs-jdwBviI",
           "title": "どこにいても目が合う配信者#葉#ゲーム実況#トモダチコレクション",
           "publishedAt": "2026-08-01T08:15:01Z",
           "videoUrl": "https://www.youtube.com/watch?v=Zvs-jdwBviI"
         },
         {
-          "index": 37,
+          "index": 39,
           "videoId": "qwy8Az5qi3Y",
           "title": "君達はもうトリコ。",
           "publishedAt": "2026-07-31T09:00:07Z",
           "videoUrl": "https://www.youtube.com/watch?v=qwy8Az5qi3Y"
         },
         {
-          "index": 38,
+          "index": 40,
           "videoId": "JLFfjPRTO9s",
           "title": "クセ強客に振り回される配信者 #葉#ゲーム実況#shiftatmidnight",
           "publishedAt": "2026-07-30T09:00:27Z",
           "videoUrl": "https://www.youtube.com/watch?v=JLFfjPRTO9s"
         },
         {
-          "index": 39,
+          "index": 41,
           "videoId": "kkIQ7YL24jc",
           "title": "バイト初日にして最大の壁",
           "publishedAt": "2026-07-29T09:12:26Z",
           "videoUrl": "https://www.youtube.com/watch?v=kkIQ7YL24jc"
         },
         {
-          "index": 40,
+          "index": 42,
           "videoId": "gqnHYmCgrW8",
           "title": "真実の愛とは…",
           "publishedAt": "2026-07-27T03:00:15Z",
           "videoUrl": "https://www.youtube.com/watch?v=gqnHYmCgrW8"
         },
         {
-          "index": 41,
+          "index": 43,
           "videoId": "TfrSQLBNHmI",
           "title": "既プレイなのに全く学習しない配信者 #葉 #ゲーム実況 #夜勤事件",
           "publishedAt": "2026-07-26T09:00:22Z",
           "videoUrl": "https://www.youtube.com/watch?v=TfrSQLBNHmI"
         },
         {
-          "index": 42,
+          "index": 44,
           "videoId": "7B8qMxh035w",
           "title": "聞く耳を持たないタイプ",
           "publishedAt": "2026-07-25T08:03:54Z",
           "videoUrl": "https://www.youtube.com/watch?v=7B8qMxh035w"
         },
         {
-          "index": 43,
+          "index": 45,
           "videoId": "txnfz3fPmj0",
           "title": "労働者を洗脳する配信者 #葉#ゲーム実況 #詐欺センターシミュレーター",
           "publishedAt": "2026-07-24T09:00:09Z",
           "videoUrl": "https://www.youtube.com/watch?v=txnfz3fPmj0"
         },
         {
-          "index": 44,
+          "index": 46,
           "videoId": "RgxCtHCIj04",
           "title": "株式会社めっちゃアットホーム",
           "publishedAt": "2026-07-23T09:00:15Z",
           "videoUrl": "https://www.youtube.com/watch?v=RgxCtHCIj04"
         },
         {
-          "index": 45,
+          "index": 47,
           "videoId": "YlqCt5nYReo",
           "title": "ホラゲに精神を壊される配信者 #葉 #ゲーム実況 #足音恐怖",
           "publishedAt": "2026-07-21T09:00:36Z",
           "videoUrl": "https://www.youtube.com/watch?v=YlqCt5nYReo"
         },
         {
-          "index": 46,
+          "index": 48,
           "videoId": "aNY_jB54f9o",
           "title": "お口チャック",
           "publishedAt": "2026-07-20T08:00:24Z",
           "videoUrl": "https://www.youtube.com/watch?v=aNY_jB54f9o"
         },
         {
-          "index": 47,
+          "index": 49,
           "videoId": "8PuZIsWMJDg",
           "title": "期待を裏切られる配信者 #葉 #ゲーム実況 #夜勤事件",
           "publishedAt": "2026-07-19T09:00:20Z",
           "videoUrl": "https://www.youtube.com/watch?v=8PuZIsWMJDg"
-        },
-        {
-          "index": 48,
-          "videoId": "auP3ZSEN0sA",
-          "title": "あいつが帰ってきた",
-          "publishedAt": "2026-07-18T09:00:23Z",
-          "videoUrl": "https://www.youtube.com/watch?v=auP3ZSEN0sA"
-        },
-        {
-          "index": 49,
-          "videoId": "eVS5oEz2yBc",
-          "title": "クリアリングが上手すぎる配信者 #葉 #ゲーム実況 #里帰り",
-          "publishedAt": "2026-07-17T09:00:11Z",
-          "videoUrl": "https://www.youtube.com/watch?v=eVS5oEz2yBc"
         }
       ]
     },
