@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-09-25T03:28:03.732753+00:00",
+  "updatedAt": "2026-09-25T09:02:36.394351+00:00",
   "pageSize": 6,
   "maxVideosPerChannel": 50,
   "channelCount": 3,
@@ -380,7 +380,7 @@
         {
           "index": 0,
           "videoId": "bh3b3obDmdI",
-          "title": "ゴーストをバスターズ！",
+          "title": "ゴーストをバスターズや！",
           "publishedAt": "2026-09-25T03:00:33Z",
           "videoUrl": "https://www.youtube.com/watch?v=bh3b3obDmdI"
         },
