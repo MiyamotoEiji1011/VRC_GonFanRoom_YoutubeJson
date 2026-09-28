@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-28T06:01:07.290244Z",
+  "updatedAt": "2026-09-28T13:03:06.021465Z",
   "youtube": {
-    "count": 688000,
-    "display": "688,000",
+    "count": 690000,
+    "display": "690,000",
     "source": "Social Blade",
     "sourceUrl": "https://socialblade.com/youtube/handle/gon_vl/realtime",
-    "lastSuccessAt": "2026-09-28T06:01:07.290256Z",
+    "lastSuccessAt": "2026-09-28T13:03:06.021477Z",
     "status": "ok"
   },
   "x": {
@@ -19,11 +19,11 @@
     "lastError": "ValueError: GON follower count not found in search text"
   },
   "twitch": {
-    "count": 535157,
-    "display": "535,157",
+    "count": 541145,
+    "display": "541,145",
     "source": "Streams Charts",
     "sourceUrl": "https://streamscharts.com/channels/gon_vl",
-    "lastSuccessAt": "2026-09-28T06:01:08.998196Z",
+    "lastSuccessAt": "2026-09-28T13:03:07.629132Z",
     "status": "ok"
   }
 }
