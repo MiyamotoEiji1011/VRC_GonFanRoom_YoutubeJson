@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-10T07:31:06.661848+00:00",
+  "updatedAt": "2026-10-10T14:13:39.399296+00:00",
   "pageSize": 6,
   "maxVideosPerChannel": 50,
   "channelCount": 3,
@@ -379,353 +379,353 @@
       "videos": [
         {
           "index": 0,
+          "videoId": "AwGvNDaV_L4",
+          "title": "CPUがポンコツすぎてブチギレる配信者 #葉 #妖怪ウォッチバスターズ",
+          "publishedAt": "2026-10-10T09:00:09Z",
+          "videoUrl": "https://www.youtube.com/watch?v=AwGvNDaV_L4"
+        },
+        {
+          "index": 1,
           "videoId": "nIXqziU_tx4",
           "title": "これが運営の力…",
           "publishedAt": "2026-10-09T09:00:39Z",
           "videoUrl": "https://www.youtube.com/watch?v=nIXqziU_tx4"
         },
         {
-          "index": 1,
+          "index": 2,
           "videoId": "VaSbaumEOz0",
           "title": "錯覚で頭がおかしくなる配信者 #葉 #superliminal",
           "publishedAt": "2026-10-08T09:00:06Z",
           "videoUrl": "https://www.youtube.com/watch?v=VaSbaumEOz0"
         },
         {
-          "index": 2,
+          "index": 3,
           "videoId": "mOQzmSbNeRg",
           "title": "錯覚に負けない男",
           "publishedAt": "2026-10-07T09:06:39Z",
           "videoUrl": "https://www.youtube.com/watch?v=mOQzmSbNeRg"
         },
         {
-          "index": 3,
+          "index": 4,
           "videoId": "rhSbLOEX5Vw",
           "title": "ガシャの結果に硬直する配信者 #葉 #妖怪ウォッチバスターズ",
           "publishedAt": "2026-10-06T09:00:03Z",
           "videoUrl": "https://www.youtube.com/watch?v=rhSbLOEX5Vw"
         },
         {
-          "index": 4,
+          "index": 5,
           "videoId": "fMSGbAvheU8",
           "title": "トラウマ再来",
           "publishedAt": "2026-10-05T07:00:38Z",
           "videoUrl": "https://www.youtube.com/watch?v=fMSGbAvheU8"
         },
         {
-          "index": 5,
+          "index": 6,
           "videoId": "_bgBSOajkrc",
           "title": "好きな子の前でカッコつけたくなる配信者 #葉 #球ひろいSimulator",
           "publishedAt": "2026-10-04T09:00:15Z",
           "videoUrl": "https://www.youtube.com/watch?v=_bgBSOajkrc"
         },
         {
-          "index": 6,
+          "index": 7,
           "videoId": "WvAH_t731eo",
           "title": "返事は「YES」か「はい」",
           "publishedAt": "2026-10-03T09:00:23Z",
           "videoUrl": "https://www.youtube.com/watch?v=WvAH_t731eo"
         },
         {
-          "index": 7,
+          "index": 8,
           "videoId": "rbEvOc7zlqg",
           "title": "ガシャのためなら手段を選ばない配信者 #葉 #妖怪ウォッチバスターズ",
           "publishedAt": "2026-10-02T09:00:23Z",
           "videoUrl": "https://www.youtube.com/watch?v=rbEvOc7zlqg"
         },
         {
-          "index": 8,
+          "index": 9,
           "videoId": "D1U6awdz17w",
           "title": "勝たねばならぬ訳がある",
           "publishedAt": "2026-10-01T08:00:02Z",
           "videoUrl": "https://www.youtube.com/watch?v=D1U6awdz17w"
         },
         {
-          "index": 9,
+          "index": 10,
           "videoId": "-yr3j3SPyWM",
           "title": "桃太郎にツッコミが止まらない配信者 #葉 #デス桃太郎",
           "publishedAt": "2026-09-30T09:03:33Z",
           "videoUrl": "https://www.youtube.com/watch?v=-yr3j3SPyWM"
         },
         {
-          "index": 10,
+          "index": 11,
           "videoId": "qJIz9gRE69I",
           "title": "桃太郎落ち着きなさい",
           "publishedAt": "2026-09-29T09:00:07Z",
           "videoUrl": "https://www.youtube.com/watch?v=qJIz9gRE69I"
         },
         {
-          "index": 11,
+          "index": 12,
           "videoId": "9Z_GEjV3kiA",
           "title": "妖怪ウォッチで神引きする配信者 #葉 #妖怪ウォッチバスターズ",
           "publishedAt": "2026-09-28T09:00:22Z",
           "videoUrl": "https://www.youtube.com/watch?v=9Z_GEjV3kiA"
         },
         {
-          "index": 12,
+          "index": 13,
           "videoId": "Nvkx4W3kndQ",
           "title": "人々はこれを絶望と呼ぶ",
           "publishedAt": "2026-09-27T09:13:49Z",
           "videoUrl": "https://www.youtube.com/watch?v=Nvkx4W3kndQ"
         },
         {
-          "index": 13,
+          "index": 14,
           "videoId": "iKUHDmSeqsc",
           "title": "ババアにブチギレる配信者 #葉 #妖怪ウォッチバスターズ",
           "publishedAt": "2026-09-26T09:00:16Z",
           "videoUrl": "https://www.youtube.com/watch?v=iKUHDmSeqsc"
         },
         {
-          "index": 14,
+          "index": 15,
           "videoId": "bh3b3obDmdI",
           "title": "ゴーストをバスターズや！",
           "publishedAt": "2026-09-25T03:00:33Z",
           "videoUrl": "https://www.youtube.com/watch?v=bh3b3obDmdI"
         },
         {
-          "index": 15,
+          "index": 16,
           "videoId": "T5oD3_lPz1E",
           "title": "衛生管理が終わってる配信者 #葉#ゲーム実況  #kiosk",
           "publishedAt": "2026-09-24T10:30:13Z",
           "videoUrl": "https://www.youtube.com/watch?v=T5oD3_lPz1E"
         },
         {
-          "index": 16,
+          "index": 17,
           "videoId": "BMkHXW48bic",
           "title": "バイト初日「絶望」",
           "publishedAt": "2026-09-23T09:00:39Z",
           "videoUrl": "https://www.youtube.com/watch?v=BMkHXW48bic"
         },
         {
-          "index": 17,
+          "index": 18,
           "videoId": "aK086SubHoo",
           "title": "ギミックが分からずパニックになる配信者 #葉#妖怪ウォッチバスターズ",
           "publishedAt": "2026-09-22T09:00:05Z",
           "videoUrl": "https://www.youtube.com/watch?v=aK086SubHoo"
         },
         {
-          "index": 18,
+          "index": 19,
           "videoId": "jGwOvcYbGFg",
           "title": "ワカメ死す",
           "publishedAt": "2026-09-21T07:44:20Z",
           "videoUrl": "https://www.youtube.com/watch?v=jGwOvcYbGFg"
         },
         {
-          "index": 19,
+          "index": 20,
           "videoId": "sZJcTjEtWpA",
           "title": "ムリカベに当たりが強すぎる配信者 #葉 #妖怪ウォッチバスターズ",
           "publishedAt": "2026-09-20T09:00:16Z",
           "videoUrl": "https://www.youtube.com/watch?v=sZJcTjEtWpA"
         },
         {
-          "index": 20,
+          "index": 21,
           "videoId": "lo680KXBGdE",
           "title": "赤に染め上げられた日",
           "publishedAt": "2026-09-19T08:48:32Z",
           "videoUrl": "https://www.youtube.com/watch?v=lo680KXBGdE"
         },
         {
-          "index": 21,
+          "index": 22,
           "videoId": "M4Xobgg1nMI",
           "title": "幽霊は関西人",
           "publishedAt": "2026-09-18T09:00:15Z",
           "videoUrl": "https://www.youtube.com/watch?v=M4Xobgg1nMI"
         },
         {
-          "index": 22,
+          "index": 23,
           "videoId": "sMvlS5PW1a8",
           "title": "ムリカベを信用しすぎている配信者#葉 #妖怪ウォッチバスターズ",
           "publishedAt": "2026-09-17T09:06:07Z",
           "videoUrl": "https://www.youtube.com/watch?v=sMvlS5PW1a8"
         },
         {
-          "index": 23,
+          "index": 24,
           "videoId": "D1PSai-2ipA",
           "title": "君達は何が出来るの？",
           "publishedAt": "2026-09-16T03:00:09Z",
           "videoUrl": "https://www.youtube.com/watch?v=D1PSai-2ipA"
         },
         {
-          "index": 24,
+          "index": 25,
           "videoId": "PuMHAKAFcd8",
           "title": "自画像に追いかけられる配信者 #葉 #狂い咲き",
           "publishedAt": "2026-09-15T10:35:12Z",
           "videoUrl": "https://www.youtube.com/watch?v=PuMHAKAFcd8"
         },
         {
-          "index": 25,
+          "index": 26,
           "videoId": "zgEcOEtDq_o",
           "title": "これが呪いの絵画…？",
           "publishedAt": "2026-09-14T09:00:39Z",
           "videoUrl": "https://www.youtube.com/watch?v=zgEcOEtDq_o"
         },
         {
-          "index": 26,
+          "index": 27,
           "videoId": "_gLqh625N7o",
           "title": "妖怪をボロクソに評価する配信者 #葉 #妖怪ウォッチバスターズ",
           "publishedAt": "2026-09-13T09:00:04Z",
           "videoUrl": "https://www.youtube.com/watch?v=_gLqh625N7o"
         },
         {
-          "index": 27,
+          "index": 28,
           "videoId": "7nrISkBQAOw",
           "title": "チームバスターズ出動！",
           "publishedAt": "2026-09-12T05:06:55Z",
           "videoUrl": "https://www.youtube.com/watch?v=7nrISkBQAOw"
         },
         {
-          "index": 28,
+          "index": 29,
           "videoId": "1a6UHtohnYw",
           "title": "恐竜の鳴き声が特殊すぎるゲーム #葉 #ひみつきち",
           "publishedAt": "2026-09-11T09:00:07Z",
           "videoUrl": "https://www.youtube.com/watch?v=1a6UHtohnYw"
         },
         {
-          "index": 29,
+          "index": 30,
           "videoId": "mrWT2k8ojEg",
           "title": "葉の妖怪ウォッチ2 真打【総集編】",
           "publishedAt": "2026-09-10T09:06:44Z",
           "videoUrl": "https://www.youtube.com/watch?v=mrWT2k8ojEg"
         },
         {
-          "index": 30,
+          "index": 31,
           "videoId": "kk6TwQLt9zA",
           "title": "多分いらんやろうな",
           "publishedAt": "2026-09-09T09:36:43Z",
           "videoUrl": "https://www.youtube.com/watch?v=kk6TwQLt9zA"
         },
         {
-          "index": 31,
+          "index": 32,
           "videoId": "D8Ql0OgrFCk",
           "title": "シングルタスクすぎる配信者 #葉 #don'tdropthecake",
           "publishedAt": "2026-09-06T09:00:17Z",
           "videoUrl": "https://www.youtube.com/watch?v=D8Ql0OgrFCk"
         },
         {
-          "index": 32,
+          "index": 33,
           "videoId": "lVE7OZAxMAE",
           "title": "一大事やね",
           "publishedAt": "2026-09-05T09:00:16Z",
           "videoUrl": "https://www.youtube.com/watch?v=lVE7OZAxMAE"
         },
         {
-          "index": 33,
+          "index": 34,
           "videoId": "k3brdazi0IA",
           "title": "ホラゲーで寿命を縮める配信者 #葉 #清純ドロップ",
           "publishedAt": "2026-09-03T09:00:34Z",
           "videoUrl": "https://www.youtube.com/watch?v=k3brdazi0IA"
         },
         {
-          "index": 34,
+          "index": 35,
           "videoId": "bpKPaDBHtYk",
           "title": "まだ僕はこの感情を知らない。",
           "publishedAt": "2026-09-02T09:35:07Z",
           "videoUrl": "https://www.youtube.com/watch?v=bpKPaDBHtYk"
         },
         {
-          "index": 35,
+          "index": 36,
           "videoId": "A_Jyol27H70",
           "title": "ヤバすぎる妹に運転を教える配信者#葉#ゲーム実況#妹に運転を教える",
           "publishedAt": "2026-09-01T09:12:14Z",
           "videoUrl": "https://www.youtube.com/watch?v=A_Jyol27H70"
         },
         {
-          "index": 36,
+          "index": 37,
           "videoId": "k_RKIaZTuAs",
           "title": "妹は紙ドライバー",
           "publishedAt": "2026-08-31T09:00:07Z",
           "videoUrl": "https://www.youtube.com/watch?v=k_RKIaZTuAs"
         },
         {
-          "index": 37,
+          "index": 38,
           "videoId": "W8lHFAIDAXI",
           "title": "ホラゲーに興奮してしまう配信者 #葉 #八尺様がいた夏休み",
           "publishedAt": "2026-08-30T09:00:04Z",
           "videoUrl": "https://www.youtube.com/watch?v=W8lHFAIDAXI"
         },
         {
-          "index": 38,
+          "index": 39,
           "videoId": "fP-1vHT3v2U",
           "title": "何尺あってもええ",
           "publishedAt": "2026-08-29T09:00:32Z",
           "videoUrl": "https://www.youtube.com/watch?v=fP-1vHT3v2U"
         },
         {
-          "index": 39,
+          "index": 40,
           "videoId": "wrPInf5CnkA",
           "title": "釣りもゲームも向いていない配信者 #葉 #gon #howtofish",
           "publishedAt": "2026-08-28T09:32:55Z",
           "videoUrl": "https://www.youtube.com/watch?v=wrPInf5CnkA"
         },
         {
-          "index": 40,
+          "index": 41,
           "videoId": "REK4ehdlq3A",
           "title": "友達と釣りやってみた。",
           "publishedAt": "2026-08-27T09:27:14Z",
           "videoUrl": "https://www.youtube.com/watch?v=REK4ehdlq3A"
         },
         {
-          "index": 41,
+          "index": 42,
           "videoId": "gRDPR80CC68",
           "title": "ホラゲーの演出にイライラが止まらない配信者 #葉 #奥ヶ淵商店街",
           "publishedAt": "2026-08-26T09:00:32Z",
           "videoUrl": "https://www.youtube.com/watch?v=gRDPR80CC68"
         },
         {
-          "index": 42,
+          "index": 43,
           "videoId": "tctRyVYLEhQ",
           "title": "一見さんお断り",
           "publishedAt": "2026-08-25T09:32:15Z",
           "videoUrl": "https://www.youtube.com/watch?v=tctRyVYLEhQ"
         },
         {
-          "index": 43,
+          "index": 44,
           "videoId": "xfoovNxv9sg",
           "title": "仲間を躊躇なく囮にする配信者 #葉 #animalrevoltbattlesimulator",
           "publishedAt": "2026-08-24T09:00:15Z",
           "videoUrl": "https://www.youtube.com/watch?v=xfoovNxv9sg"
         },
         {
-          "index": 44,
+          "index": 45,
           "videoId": "ql3Vx1CqhmQ",
           "title": "全軍突撃！",
           "publishedAt": "2026-08-22T10:20:58Z",
           "videoUrl": "https://www.youtube.com/watch?v=ql3Vx1CqhmQ"
         },
         {
-          "index": 45,
+          "index": 46,
           "videoId": "UIsC18KZvso",
           "title": "イカに弄ばれる配信者 #葉 #青鬼2",
           "publishedAt": "2026-08-21T10:54:29Z",
           "videoUrl": "https://www.youtube.com/watch?v=UIsC18KZvso"
         },
         {
-          "index": 46,
+          "index": 47,
           "videoId": "wtizkjYQo0s",
           "title": "青ければええ思うなよ",
           "publishedAt": "2026-08-20T09:00:29Z",
           "videoUrl": "https://www.youtube.com/watch?v=wtizkjYQo0s"
         },
         {
-          "index": 47,
+          "index": 48,
           "videoId": "L2WSCq4G0XQ",
           "title": "ホラゲーそっちのけで雪かきをしまくる配信者 #葉#雪葬",
           "publishedAt": "2026-08-19T09:00:31Z",
           "videoUrl": "https://www.youtube.com/watch?v=L2WSCq4G0XQ"
         },
         {
-          "index": 48,
+          "index": 49,
           "videoId": "dYlXvwf2_gI",
           "title": "嫌いな言葉は「冗談」",
           "publishedAt": "2026-08-18T09:34:16Z",
           "videoUrl": "https://www.youtube.com/watch?v=dYlXvwf2_gI"
-        },
-        {
-          "index": 49,
-          "videoId": "WDXjG24iqJM",
-          "title": "ネタバレが激しすぎるゲームにツッコミが止まらない配信者 #葉 #ネタバレが激しすぎるrpg",
-          "publishedAt": "2026-08-17T09:00:17Z",
-          "videoUrl": "https://www.youtube.com/watch?v=WDXjG24iqJM"
         }
       ]
     },
