@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T03:09:36.512542+00:00",
+  "updatedAt": "2026-10-16T08:23:37.506256+00:00",
   "pageSize": 6,
   "maxVideosPerChannel": 50,
   "channelCount": 3,
@@ -734,286 +734,293 @@
       "channelId": "UC8wqTPKIAWx4ZdNEiHu89qw",
       "channelHandle": "@yoh_gon",
       "channelTitle": "ようごんチャンネル",
-      "count": 40,
+      "count": 41,
       "pageSize": 6,
       "pageCount": 7,
       "thumbnailPath": "thumb_pages/yohgon/",
       "videos": [
         {
           "index": 0,
+          "videoId": "DowVtLJibSw",
+          "title": "友達の家族別人ドッキリ",
+          "publishedAt": "2026-10-16T08:00:30Z",
+          "videoUrl": "https://www.youtube.com/watch?v=DowVtLJibSw"
+        },
+        {
+          "index": 1,
           "videoId": "JZyl97_Z14Y",
           "title": "ゲーム実況者が戦慄迷宮に挑んでみた結果…",
           "publishedAt": "2026-10-09T08:00:17Z",
           "videoUrl": "https://www.youtube.com/watch?v=JZyl97_Z14Y"
         },
         {
-          "index": 1,
+          "index": 2,
           "videoId": "GOsOFt8253Q",
           "title": "貴族なので全問正解して帰らせていただきます。",
           "publishedAt": "2026-10-03T08:00:26Z",
           "videoUrl": "https://www.youtube.com/watch?v=GOsOFt8253Q"
         },
         {
-          "index": 2,
+          "index": 3,
           "videoId": "X9aRkfqaW34",
           "title": "【検証】シラフより泥酔したほうが点数上がる説",
           "publishedAt": "2026-09-29T08:00:39Z",
           "videoUrl": "https://www.youtube.com/watch?v=X9aRkfqaW34"
         },
         {
-          "index": 3,
+          "index": 4,
           "videoId": "bCiwTNFev-I",
           "title": "ぶった斬り恋愛相談教室 #shorts",
           "publishedAt": "2026-09-26T08:31:53Z",
           "videoUrl": "https://www.youtube.com/watch?v=bCiwTNFev-I"
         },
         {
-          "index": 4,
+          "index": 5,
           "videoId": "5uAYd1uplRQ",
           "title": "葉とGONが悩める子羊をぶった斬ります",
           "publishedAt": "2026-09-18T09:08:51Z",
           "videoUrl": "https://www.youtube.com/watch?v=5uAYd1uplRQ"
         },
         {
-          "index": 5,
+          "index": 6,
           "videoId": "lwOQKATu3EA",
           "title": "【神回】元プロゲーマーとゲーム実況者、本気出しました",
           "publishedAt": "2026-09-11T08:00:24Z",
           "videoUrl": "https://www.youtube.com/watch?v=lwOQKATu3EA"
         },
         {
-          "index": 6,
+          "index": 7,
           "videoId": "41mkny_b4d8",
           "title": "まさかの大物を釣り上げてしまいました…",
           "publishedAt": "2026-09-04T08:37:17Z",
           "videoUrl": "https://www.youtube.com/watch?v=41mkny_b4d8"
         },
         {
-          "index": 7,
+          "index": 8,
           "videoId": "zJ2Lt9sib6Y",
           "title": "好きだけど得意ではない２人による激辛旅がこちら",
           "publishedAt": "2026-08-28T08:24:18Z",
           "videoUrl": "https://www.youtube.com/watch?v=zJ2Lt9sib6Y"
         },
         {
-          "index": 8,
+          "index": 9,
           "videoId": "DLklGoRoUPo",
           "title": "一万円企画で裏技使い始めるゲーム実況者 #shorts",
           "publishedAt": "2026-08-26T06:56:51Z",
           "videoUrl": "https://www.youtube.com/watch?v=DLklGoRoUPo"
         },
         {
-          "index": 9,
+          "index": 10,
           "videoId": "g-TwgpZeYZM",
           "title": "【葉運転】ガリガリ２人だと大食いになります",
           "publishedAt": "2026-08-21T09:35:49Z",
           "videoUrl": "https://www.youtube.com/watch?v=g-TwgpZeYZM"
         },
         {
-          "index": 10,
+          "index": 11,
           "videoId": "hJOggHbsCMk",
           "title": "ガリガリ２人が１日デブの食事してみた結果…",
           "publishedAt": "2026-08-14T08:00:39Z",
           "videoUrl": "https://www.youtube.com/watch?v=hJOggHbsCMk"
         },
         {
-          "index": 11,
+          "index": 12,
           "videoId": "KLMcuTXIJvg",
           "title": "初水上アスレチックおもろすぎ #shorts",
           "publishedAt": "2026-08-08T05:12:20Z",
           "videoUrl": "https://www.youtube.com/watch?v=KLMcuTXIJvg"
         },
         {
-          "index": 12,
+          "index": 13,
           "videoId": "yHD_WxNrQ40",
           "title": "運動不足ゲーマー２人が水上アスレチックに初挑戦します",
           "publishedAt": "2026-08-07T08:00:11Z",
           "videoUrl": "https://www.youtube.com/watch?v=yHD_WxNrQ40"
         },
         {
-          "index": 13,
+          "index": 14,
           "videoId": "oiGSIjdddME",
           "title": "一流YouTuberなので全問正解させていただきます",
           "publishedAt": "2026-07-31T09:00:19Z",
           "videoUrl": "https://www.youtube.com/watch?v=oiGSIjdddME"
         },
         {
-          "index": 14,
+          "index": 15,
           "videoId": "XU8v2YzgS7E",
           "title": "人生で1番焦った”タマ”の話 #shorts",
           "publishedAt": "2026-07-30T11:45:57Z",
           "videoUrl": "https://www.youtube.com/watch?v=XU8v2YzgS7E"
         },
         {
-          "index": 15,
+          "index": 16,
           "videoId": "li3y4dwDTkE",
           "title": "UberEats1万円分頼んでリスナーからの質問に答えます",
           "publishedAt": "2026-07-24T10:00:25Z",
           "videoUrl": "https://www.youtube.com/watch?v=li3y4dwDTkE"
         },
         {
-          "index": 16,
+          "index": 17,
           "videoId": "Hg5Vu1Av86I",
           "title": "23歳無職に彼女が出来ました。",
           "publishedAt": "2026-07-18T03:00:09Z",
           "videoUrl": "https://www.youtube.com/watch?v=Hg5Vu1Av86I"
         },
         {
-          "index": 17,
+          "index": 18,
           "videoId": "UH5PfiZc_Bs",
           "title": "ゲーム実況者は金なし携帯なしで帰ってこれるのか…",
           "publishedAt": "2026-07-12T09:08:53Z",
           "videoUrl": "https://www.youtube.com/watch?v=UH5PfiZc_Bs"
         },
         {
-          "index": 18,
+          "index": 19,
           "videoId": "EdK6Uigq1RY",
           "title": "明日から人生が変わるようごんマインド #shorts",
           "publishedAt": "2026-07-07T09:00:10Z",
           "videoUrl": "https://www.youtube.com/watch?v=EdK6Uigq1RY"
         },
         {
-          "index": 19,
+          "index": 20,
           "videoId": "ffszzpC6_b0",
           "title": "YouTuberなら彼のこと何でも知ってるよね？",
           "publishedAt": "2026-07-02T08:00:19Z",
           "videoUrl": "https://www.youtube.com/watch?v=ffszzpC6_b0"
         },
         {
-          "index": 20,
+          "index": 21,
           "videoId": "gLWqgEgnKuk",
           "title": "【ナメてた】ゲーマー２人が初めてキャンプしてみた結果…",
           "publishedAt": "2026-06-21T08:46:04Z",
           "videoUrl": "https://www.youtube.com/watch?v=gLWqgEgnKuk"
         },
         {
-          "index": 21,
+          "index": 22,
           "videoId": "wEWVPvqmWgs",
           "title": "【初心者必見】ゲーマー２人でキャンプ道具爆買いしてみた",
           "publishedAt": "2026-06-13T03:00:39Z",
           "videoUrl": "https://www.youtube.com/watch?v=wEWVPvqmWgs"
         },
         {
-          "index": 22,
+          "index": 23,
           "videoId": "nSSwStXJpl0",
           "title": "泥酔した新人YouTuberが事件を起こしました #shorts",
           "publishedAt": "2026-06-09T10:23:27Z",
           "videoUrl": "https://www.youtube.com/watch?v=nSSwStXJpl0"
         },
         {
-          "index": 23,
+          "index": 24,
           "videoId": "H2FdHXcpV8E",
           "title": "【うちら最強】ゲーマー２人がギャルメイクして竹下通りいってみた",
           "publishedAt": "2026-06-05T09:00:13Z",
           "videoUrl": "https://www.youtube.com/watch?v=H2FdHXcpV8E"
         },
         {
-          "index": 24,
+          "index": 25,
           "videoId": "g_7X8pNZ2Fw",
           "title": "常識無いのがバレる新人YouTuber #shorts",
           "publishedAt": "2026-06-02T12:09:17Z",
           "videoUrl": "https://www.youtube.com/watch?v=g_7X8pNZ2Fw"
         },
         {
-          "index": 25,
+          "index": 26,
           "videoId": "UKQkwI_k_cI",
           "title": "ペヤング獄激辛、正直余裕でしょｗ",
           "publishedAt": "2026-05-29T10:30:03Z",
           "videoUrl": "https://www.youtube.com/watch?v=UKQkwI_k_cI"
         },
         {
-          "index": 26,
+          "index": 27,
           "videoId": "O2ao_AHtMLM",
           "title": "負けたら〇〇！コストコ人気商品バトル！#shorts #コストコ",
           "publishedAt": "2026-05-23T11:30:21Z",
           "videoUrl": "https://www.youtube.com/watch?v=O2ao_AHtMLM"
         },
         {
-          "index": 27,
+          "index": 28,
           "videoId": "yFtrhyIJpIU",
           "title": "【〇〇万円】ガリガリ２人でコストコに行ってみた結果…",
           "publishedAt": "2026-05-22T09:01:10Z",
           "videoUrl": "https://www.youtube.com/watch?v=yFtrhyIJpIU"
         },
         {
-          "index": 28,
+          "index": 29,
           "videoId": "0n6m7n1zy9Q",
           "title": "イントロクイズなのに途中から歌う人 #shorts",
           "publishedAt": "2026-05-18T09:30:00Z",
           "videoUrl": "https://www.youtube.com/watch?v=0n6m7n1zy9Q"
         },
         {
-          "index": 29,
+          "index": 30,
           "videoId": "CkeHzqf9ZVo",
           "title": "GONを１番よく知るのは？第１回GON王",
           "publishedAt": "2026-05-15T11:30:09Z",
           "videoUrl": "https://www.youtube.com/watch?v=CkeHzqf9ZVo"
         },
         {
-          "index": 30,
+          "index": 31,
           "videoId": "moTpxeyTLYw",
           "title": "YouTuber研修をする葉とGON #shorts",
           "publishedAt": "2026-05-14T12:21:49Z",
           "videoUrl": "https://www.youtube.com/watch?v=moTpxeyTLYw"
         },
         {
-          "index": 31,
+          "index": 32,
           "videoId": "JqIPdUv6TQ8",
           "title": "普段運動をしないゲーマー2人が体力テストをした結果…",
           "publishedAt": "2026-04-30T11:00:37Z",
           "videoUrl": "https://www.youtube.com/watch?v=JqIPdUv6TQ8"
         },
         {
-          "index": 32,
+          "index": 33,
           "videoId": "WoZ887ePwQs",
           "title": "概念コーデバトル #shorts",
           "publishedAt": "2026-04-21T08:00:35Z",
           "videoUrl": "https://www.youtube.com/watch?v=WoZ887ePwQs"
         },
         {
-          "index": 33,
+          "index": 34,
           "videoId": "j_22V5eBCrI",
           "title": "全く料理をしない男達がフレンチで対決します",
           "publishedAt": "2026-04-17T09:30:26Z",
           "videoUrl": "https://www.youtube.com/watch?v=j_22V5eBCrI"
         },
         {
-          "index": 34,
+          "index": 35,
           "videoId": "mQYasrJnt5g",
           "title": "たこ焼きを右左どっちで作ってみた結果… #shorts",
           "publishedAt": "2026-04-08T13:50:03Z",
           "videoUrl": "https://www.youtube.com/watch?v=mQYasrJnt5g"
         },
         {
-          "index": 35,
+          "index": 36,
           "videoId": "ZShgb6RE5FI",
           "title": "葉とGONがリスナーのお悩み解決します",
           "publishedAt": "2026-04-07T10:30:24Z",
           "videoUrl": "https://www.youtube.com/watch?v=ZShgb6RE5FI"
         },
         {
-          "index": 36,
+          "index": 37,
           "videoId": "__cNnsl_dvI",
           "title": "元プロゲーマーとゲーム実況者なら余裕だろｗ",
           "publishedAt": "2026-03-28T13:34:49Z",
           "videoUrl": "https://www.youtube.com/watch?v=__cNnsl_dvI"
         },
         {
-          "index": 37,
+          "index": 38,
           "videoId": "SRhTslDxC5Q",
           "title": "【社会人経験無し】YouTuberになるために、常識力をつけてもらいます",
           "publishedAt": "2026-03-14T08:00:24Z",
           "videoUrl": "https://www.youtube.com/watch?v=SRhTslDxC5Q"
         },
         {
-          "index": 38,
+          "index": 39,
           "videoId": "jljsyYUIFeY",
           "title": "自作の釣り竿で釣りしてみた",
           "publishedAt": "2026-02-23T08:00:55Z",
           "videoUrl": "https://www.youtube.com/watch?v=jljsyYUIFeY"
         },
         {
-          "index": 39,
+          "index": 40,
           "videoId": "hNTlbkLQalY",
           "title": "葉とGON、YouTuberになります",
           "publishedAt": "2026-02-17T10:01:04Z",
