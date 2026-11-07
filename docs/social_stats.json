@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-06T21:48:48.550608Z",
+  "updatedAt": "2026-11-07T01:19:40.794776Z",
   "youtube": {
     "count": 787000,
     "display": "787,000",
     "source": "Social Blade",
     "sourceUrl": "https://socialblade.com/youtube/handle/gon_vl/realtime",
-    "lastSuccessAt": "2026-11-06T21:48:48.550624Z",
+    "lastSuccessAt": "2026-11-07T01:19:40.794810Z",
     "status": "ok"
   },
   "x": {
@@ -23,7 +23,7 @@
     "display": "552,872",
     "source": "Streams Charts",
     "sourceUrl": "https://streamscharts.com/channels/gon_vl",
-    "lastSuccessAt": "2026-11-06T21:48:49.876914Z",
+    "lastSuccessAt": "2026-11-07T01:19:42.343252Z",
     "status": "ok"
   }
 }
