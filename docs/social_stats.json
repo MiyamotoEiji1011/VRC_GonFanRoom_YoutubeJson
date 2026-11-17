@@ -1,14 +1,13 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-17T09:46:58.076916Z",
+  "updatedAt": "2026-11-17T18:47:52.032587Z",
   "youtube": {
-    "count": 814000,
-    "display": "814,000",
+    "count": 817000,
+    "display": "817,000",
     "source": "Social Blade",
     "sourceUrl": "https://socialblade.com/youtube/handle/gon_vl/realtime",
-    "lastSuccessAt": "2026-11-17T01:08:39.963855Z",
-    "status": "stale",
-    "lastError": "HTTPError: 403 Client Error: Forbidden for url: https://socialblade.com/youtube/handle/gon_vl/realtime"
+    "lastSuccessAt": "2026-11-17T18:47:52.032606Z",
+    "status": "ok"
   },
   "x": {
     "count": 0,
@@ -24,8 +23,7 @@
     "display": "552,872",
     "source": "Streams Charts",
     "sourceUrl": "https://streamscharts.com/channels/gon_vl",
-    "lastSuccessAt": "2026-11-17T01:08:42.418573Z",
-    "status": "stale",
-    "lastError": "HTTPError: 403 Client Error: Forbidden for url: https://streamscharts.com/channels/gon_vl"
+    "lastSuccessAt": "2026-11-17T18:47:54.050845Z",
+    "status": "ok"
   }
 }
